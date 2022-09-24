@@ -1,5 +1,6 @@
 import json
 import random
+from tarfile import _Bz2ReadableFileobj
 import time
 
 def binary_search(arr, low, high, x):
@@ -31,7 +32,12 @@ with open("/Users/macbook/Downloads/words_dictionary.json") as json_file:
 
 english_dict.sort()
 
-upper_bound = int(input("How many words?\n"))
+while True:
+    try:
+        upper_bound = int(input("How many words?\n"))
+        break
+    except ValueError:
+        print("Enter an integer value.")
 
 start = time.time()
 for x in range(1, upper_bound):
