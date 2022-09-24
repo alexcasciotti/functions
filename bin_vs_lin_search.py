@@ -1,6 +1,5 @@
 import json
 import random
-from tarfile import _Bz2ReadableFileobj
 import time
 
 def binary_search(arr, low, high, x):
