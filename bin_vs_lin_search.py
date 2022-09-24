@@ -31,15 +31,7 @@ with open("/Users/macbook/Downloads/words_dictionary.json") as json_file:
 
 english_dict.sort()
 
-while True:
-    try:
-        upper_bound = int(input("How many words?\n"))
-        if(upper_bound <= 0 or upper_bound > len(english_dict)):
-            print("Please choose an integer within the range (0,370101]")
-        else:
-            break
-    except ValueError:
-        print("Please enter an integer.")
+upper_bound = int(input("How many words?\n"))
 
 start = time.time()
 for x in range(1, upper_bound):
