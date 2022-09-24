@@ -1,16 +1,11 @@
-def binary_search(list, target, low=None, high=None):
-    if low is None:
-        low = 0
-    if high is None:
-        high = len(list) - 1
-    if(low > high):
+def binary_search(arr, low, high, x):
+    if high >= low:
+        mid = (high + low) // 2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] > x:
+            return binary_search(arr, low, mid - 1, x)
+        else:
+            return binary_search(arr, mid + 1, high, x)
+    else:
         return -1
-    mid = (low + high) // 2
-    if(list[mid] == target):
-        return mid
-    if(list[mid] < target):
-        new_low = mid + 1
-        return binary_search(list, target, new_low, high)
-    if(list[mid] > target):
-        new_high = mid - 1
-        return binary_search(list, target, low, new_high)
