@@ -22,6 +22,7 @@ def linear_search(list, target):
 
 data = {}
 english_dict = []
+
 with open("/Users/macbook/Downloads/words_dictionary.json") as json_file:
     data = json.load(json_file)
     for x in data:
@@ -67,3 +68,4 @@ lin_search_time = round(end - start, 7)
 
 print(f"\nBinary search found {upper_bound} items in {bin_search_time}s\n")
 print(f"\nLinear search found {upper_bound} items in {lin_search_time}s\n")
+
